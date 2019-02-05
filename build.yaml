@@ -2,23 +2,18 @@ steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/prakhag1/Java-Test']
 
-- name: 'gcr.io/cloud-builders/mvn'
-  args: ['install', '-DskipTests']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ["build", "-t", "gcr.io/vital-octagon-109612/hello-world", "."]
   dir: 'Java-Test'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ["build", "-t", "gcr.io/vital-octagon-109612/hello-world:latest", "."]
-  dir: 'Java-Test'
+  args: [ 'tag', 'gcr.io/vital-octagon-109612/hello-world', "gcr.io/vital-octagon-109612/hello-world:latest"]
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ["push", "gcr.io/vital-octagon-109612/hello-world:latest"]
 
 - name: 'gcr.io/cloud-builders/kubectl'
-  args:
-  - 'set'
-  - 'image'
-  - 'deployment/hello-world-deploy'
-  - 'container=gcr.io/vital-octagon-109612/hello-world:latest'
+  args: ['set', 'image', 'deployment/hello-world-deployment', 'hello-world=gcr.io/vital-octagon-109612/hello-world:latest']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-east4-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster'

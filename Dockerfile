@@ -1,6 +1,5 @@
 FROM openjdk:8-jre
-COPY . /  
-WORKDIR /src/main/java/com/example/javamavenjunithelloworld/ 
-RUN javac *.java  
-CMD ["java", "HelloApp"]  
-
+FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
+COPY . /
+RUN mvn clean compile assembly:assembly package
+CMD java -jar /target/java-maven-junit-helloworld-2.0-SNAPSHOT-jar-with-dependencies.jar
