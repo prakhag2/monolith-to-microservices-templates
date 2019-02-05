@@ -13,7 +13,7 @@ steps:
   args: ["push", "gcr.io/vital-octagon-109612/hello-world:latest"]
 
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'image', 'deployment/hello-world-deployment', 'java-test-sha256=gcr.io/vital-octagon-109612/hello-world:latest']
+  args: ['set', 'image', 'deployment/hello-world-deployment', 'nginx=gcr.io/vital-octagon-109612/hello-world:latest']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-east4-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster'

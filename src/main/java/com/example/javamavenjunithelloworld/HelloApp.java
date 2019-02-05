@@ -24,7 +24,7 @@ public class HelloApp {
 			try {
 				times = Integer.valueOf(args[0]);
 			} catch (NumberFormatException e) {
-				System.err.println("I don't understand the parameter you passed me. Is it a number? "
+				System.out.println("I don't understand the parameter you passed me. Is it a number? "
 						+ "Parameter was: [" + args[0] + "]");
 				System.exit(EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
 			}
@@ -34,7 +34,7 @@ public class HelloApp {
 		try {
 			hi.setTimes(times);
 		} catch (IllegalArgumentException e) {
-			System.err.println("Something went wrong: " + e.getMessage());
+			System.out.println("Something went wrong: " + e.getMessage());
 			System.exit(EXIT_STATUS_HELLO_FAILED);
 		}
 		hi.sayHello(System.out);
