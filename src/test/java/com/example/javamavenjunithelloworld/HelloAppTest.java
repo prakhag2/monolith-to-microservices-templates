@@ -40,34 +40,34 @@ public class HelloAppTest {
         HelloApp.main(args);
     }
 
-//    @Test
-//    public void testBogusArgument() {
-//        String[] args = {"bicycle"};
-//
-//        try {
-//            HelloApp.main(args);
-//            // Our custom SecurityManager should have thrown an exception when HelloApp exited.
-//            // This means this line below cannot be reached. To make sure that our custom SecurityManager
-//            // works as expected, we fail the test if this line is ever reached:
-//            fail("Unreachable.");
-//        } catch (TestExitException e) {
-//            // Did the program exit with the expected error code?
-//            assertThat(e.getStatus(), is(HelloApp.EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD));
-//        }
-//    }
-//
-//    @Test
-//    public void testTooHighArgument() {
-//        String[] args = {"999"};
-//
-//        try {
-//            HelloApp.main(args);
-//            fail("Unreachable.");
-//        } catch (TestExitException e) {
-//            // Did the program exit with the expected error code?
-//            assertThat(e.getStatus(), is(HelloApp.EXIT_STATUS_HELLO_FAILED));
-//        }
-//    }
+    @Test
+    public void testBogusArgument() {
+        String[] args = {"bicycle"};
+
+        try {
+            HelloApp.main(args);
+            // Our custom SecurityManager should have thrown an exception when HelloApp exited.
+            // This means this line below cannot be reached. To make sure that our custom SecurityManager
+            // works as expected, we fail the test if this line is ever reached:
+            fail("Unreachable.");
+        } catch (TestExitException e) {
+            // Did the program exit with the expected error code?
+            assertThat(e.getStatus(), is(HelloApp.EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD));
+        }
+    }
+
+    @Test
+    public void testTooHighArgument() {
+        String[] args = {"999"};
+
+        try {
+            HelloApp.main(args);
+            fail("Unreachable.");
+        } catch (TestExitException e) {
+            // Did the program exit with the expected error code?
+            assertThat(e.getStatus(), is(HelloApp.EXIT_STATUS_HELLO_FAILED));
+        }
+    }
 
     @Test
     public void testDefaultArgument() {
