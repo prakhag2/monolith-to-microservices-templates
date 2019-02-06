@@ -25,20 +25,25 @@ public class HelloApp {
 		if (args.length >= 1) {
 			try {
 				times = Integer.valueOf(args[0]);
-			} catch (NumberFormatException e) {
-				System.out.println("I don't understand the parameter you passed me. Is it a number? "
-						+ "Parameter was: [" + args[0] + "]");
-				System.exit(EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
+			} 
+			catch (NumberFormatException e) {
+				//System.out.println("I don't understand the parameter you passed me. Is it a number? "
+				//		+ "Parameter was: [" + args[0] + "]");
+				//System.exit(EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
+				throw e;
 			}
 		}
 
 		Hello hi = new Hello();
 		try {
 			hi.setTimes(times);
-		} catch (IllegalArgumentException e) {
-			System.out.println("Something went wrong: " + e.getMessage());
-			System.exit(EXIT_STATUS_HELLO_FAILED);
+		} 
+		catch (IllegalArgumentException e) {
+			//System.out.println("Something went wrong: " + e.getMessage());
+			//System.exit(EXIT_STATUS_HELLO_FAILED);
+			throw e;
 		}
+		
 		hi.sayHello(System.out);
 	}
 
