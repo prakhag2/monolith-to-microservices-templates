@@ -1,6 +1,5 @@
 package com.example.javamavenjunithelloworld;
 
-import java.util.logging.Logger;
 
 
 /**
@@ -13,7 +12,6 @@ public class HelloApp {
 
 	static int EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD = 2;
 	static int EXIT_STATUS_HELLO_FAILED = 4;
-	private static final Logger LOGGER = Logger.getLogger(HelloApp.class.getName());
 
 	/**
 	 * The main method of this program.
@@ -42,7 +40,6 @@ public class HelloApp {
 			System.exit(EXIT_STATUS_HELLO_FAILED);
 		}
 		hi.sayHello(System.out);
-		LOGGER.info("Okay!");
 	}
 
 }
