@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/prakhag1/Java-Test']
+  args: ['clone', '-b', $BRANCH_NAME, '--single-branch', $REPO_NAME]
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ["build", "-t", "gcr.io/vital-octagon-109612/hello-world", "."]
@@ -17,6 +17,4 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-east4-b'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster'
-
-
 
