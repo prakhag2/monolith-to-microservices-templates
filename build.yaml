@@ -1,4 +1,4 @@
-steps:
+steps: 
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', '-b', 'dev', '--single-branch', 'https://github.com/prakhag1/Java-Test']
 
