@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', '-b', $BRANCH_NAME, '--single-branch', $REPO_NAME]
+  args: ['clone', '-b', 'dev', '--single-branch', 'https://github.com/prakhag1/Java-Test']
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ["build", "-t", "gcr.io/vital-octagon-109612/hello-world", "."]
