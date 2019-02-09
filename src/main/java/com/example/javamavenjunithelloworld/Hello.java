@@ -8,6 +8,7 @@ import java.io.PrintStream;
 public class Hello {
 
     static final String HELLO = "Hola!!";
+    String temp;
 
     public static final int MAXIMUM_AMOUNT_OF_TIMES = 20;
 
