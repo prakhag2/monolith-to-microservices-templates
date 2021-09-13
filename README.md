@@ -4,6 +4,6 @@ These tutorials take example of a dummy ecommerce application and walks through 
 
 Tools used for the provided templates include:
 * vFunction (https://vfunction.com/) - Decoupling Java-based monolith
-* [Zeebe] (https://github.com/zeebe-io) - For creating distributed workflows
-* [OpenCensus] (https://opencensus.io/) - For distributed tracing
-* [Yourkit] (https://www.yourkit.com/) - For profiling decoupled microservices. YourKit is the creator of [YourKit Java] (https://www.yourkit.com/java/profiler) and [Yourkit .NET profiler] (https://www.yourkit.com/.net/profiler/").
+* Zeebe (https://github.com/zeebe-io) - For creating distributed workflows
+* OpenCensus (https://opencensus.io/) - For distributed tracing
+* Yourkit (https://www.yourkit.com/) - For profiling decoupled microservices. YourKit is the creator of [YourKit Java] (https://www.yourkit.com/java/profiler) and [Yourkit .NET profiler] (https://www.yourkit.com/.net/profiler/").
