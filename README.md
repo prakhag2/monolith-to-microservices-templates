@@ -1,28 +1,9 @@
-# A Java/Maven/JUnit HelloWorld example
+This repository contains templates for migrating monolith to microservices setup and setup distributed transactions, distributed tracing and profiling in a microservices application.
 
-A „Hello World!” sample written in Java using Maven for the build, that showcases a few very simple tests.
+These tutorials take example of a dummy ecommerce application and walks through the steps of converting the monolithic application to microservices. The tutorial series demonstrates microservices development using Strangler Pattern for checkout and payment flows in the example ecommerce application. Other details covered include distributed transactions spanning across microservices boundaries, compensations implementation using Sagas, isolating microservices using gRPC and OpenCensus/Stackdriver based distributed tracing for a polyglot application running different protocols (HTTP and gRPC).
 
-This example demonstrates:
-
-* A simple Java 8 application with tests
-* Unit tests written with [JUnit 5](https://junit.org/junit5/)
-* Integration tests written with [JUnit 5](https://junit.org/junit5/)
-* Code coverage reports via [JaCoCo](https://www.jacoco.org/jacoco/)
-* A Maven build that puts it all together
-
-## Running the tests
-
-* To run the unit tests, call `mvn test`
-* To run the integration tests as well, call `mvn verify`
-* Code coverage reports are generated when `mvn verify` (or a full `mvn clean install`) is called.
-  Point a browser at the output in `target/site/jacoco-both/index.html` to see the report.
-
-## Conventions
-
-This example follows the following basic conventions:
-
-| | unit test | integration test |
-| --- | --- | --- |
-| **resides in:** | `src/test/java/*Test.java` | `src/test/java/*IT.java` |
-| **executes in Maven phase:** | test | verify |
-| **handled by Maven plugin:** | [surefire](http://maven.apache.org/surefire/maven-surefire-plugin/) | [failsafe](http://maven.apache.org/surefire/maven-failsafe-plugin/) |
+Tools used for the provided templates include:
+* vFunction [https://vfunction.com/] - Decoupling Java-based monolith
+* Zeebe [https://github.com/zeebe-io] - For creating distributed workflows
+* OpenCensus [https://opencensus.io/] - For distributed tracing
+* Yourkit [https://www.yourkit.com/] - For profiling decoupled microservices. YourKit is the creator of YourKit Java [https://www.yourkit.com/java/profiler] and Yourkit .NET profiler [https://www.yourkit.com/.net/profiler/">YourKit .NET Profiler].
